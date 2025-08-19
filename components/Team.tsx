@@ -1,12 +1,13 @@
 "use client";
 import { useState } from 'react';
+import Image from 'next/image';
 
 type Member = { name: string; role: string; img?: string; video?: string };
 
 const members: Member[] = [
-  { name: 'A. Sato', role: 'SRE', img: '/team/sample1.jpg', video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-  { name: 'B. Tanaka', role: 'Backend Eng', img: '/team/sample2.jpg' },
-  { name: 'C. Suzuki', role: 'ML Eng', img: '/team/sample3.jpg' },
+  { name: 'A. Sato', role: 'SRE', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop', video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+  { name: 'B. Tanaka', role: 'Backend Eng', img: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop' },
+  { name: 'C. Suzuki', role: 'ML Eng', img: 'https://images.unsplash.com/photo-1541534401786-2077eed87a82?q=80&w=1200&auto=format&fit=crop' },
 ];
 
 export const Team = () => {
@@ -19,15 +20,22 @@ export const Team = () => {
           {members.map((m) => (
             <button
               key={m.name}
-              className="rounded-xl border border-gray-800 p-6 text-left hover:border-gray-600 transition"
+              className="card text-left overflow-hidden group shadow-hover"
               onClick={() => setActive(m)}
             >
-              <div className="h-32 w-full bg-gray-800 rounded mb-4 overflow-hidden flex items-center justify-center">
-                <span className="text-gray-500 text-sm">{m.img ? 'Photo' : 'No Photo'}</span>
+              <div className="relative h-44 w-full">
+                {m.img ? (
+                  <Image src={m.img} alt={m.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                ) : (
+                  <div className="h-full w-full bg-gray-800" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4">
+                  <div className="text-sm uppercase tracking-wider text-brand.green">{m.role}</div>
+                  <div className="font-semibold text-lg">{m.name}</div>
+                </div>
               </div>
-              <div className="font-semibold">{m.name}</div>
-              <div className="text-gray-400 text-sm">{m.role}</div>
-              <div className="text-gray-300 text-xs mt-2">
+              <div className="px-4 py-4 text-gray-300 text-sm">
                 最も興奮する瞬間は？「本番で美しく動く瞬間」
               </div>
             </button>
@@ -37,7 +45,7 @@ export const Team = () => {
 
       {active && (
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4" onClick={() => setActive(null)}>
-          <div className="bg-gray-900 border border-gray-700 rounded-lg w-full max-w-2xl p-4" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gray-900/90 backdrop-blur-md border border-gray-700 rounded-lg w-full max-w-2xl p-4" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-3">
               <div className="font-semibold">{active.name}</div>
               <button className="btn-secondary" onClick={() => setActive(null)}>閉じる</button>

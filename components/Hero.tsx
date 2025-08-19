@@ -19,16 +19,18 @@ function useTyping(text: string, speed = 80) {
 export const Hero = () => {
   const typed = useTyping('Code the Future.', 80);
   return (
-    <section id="hero" className="section relative overflow-hidden">
-      <div className="container text-center">
-        <motion.h1 className="h1 mb-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <VideoBackground />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80" />
+      <div className="container relative z-10 text-center">
+        <motion.h1 className="h1 mb-6 drop-shadow" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           {typed}
         </motion.h1>
-        <p className="p max-w-2xl mx-auto">
+        <p className="p max-w-2xl mx-auto text-gray-200">
           その一行が、地球のターニングポイントになる。
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
-          <a href="#mission" className="btn">私たちの挑戦を知る</a>
+          <a href="#mission" className="btn glass">私たちの挑戦を知る</a>
         </div>
       </div>
       <EnergyFlow />
@@ -51,6 +53,26 @@ const EnergyFlow = () => {
         animate={{ width: '80%' }}
         transition={{ duration: 2 }}
       />
+    </div>
+  );
+};
+
+const VideoBackground = () => {
+  return (
+    <div className="absolute inset-0 -z-20">
+      <video
+        className="h-full w-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600&auto=format&fit=crop"
+      >
+        <source
+          src="https://assets.coverr.co/videos/coverr-earth-in-space-3432/1080p.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
   );
 };
