@@ -29,11 +29,11 @@ export const Mission = () => {
         </p>
         <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
           <div className="rounded-xl border border-gray-800 p-6">
-            <div className="text-3xl font-bold text-brand.green">{co2.toLocaleString()} t</div>
+            <div className="text-3xl font-bold text-brand-green">{co2.toLocaleString()} t</div>
             <div className="text-gray-400 mt-1">削減されたCO₂量（累計）</div>
           </div>
           <div className="rounded-xl border border-gray-800 p-6">
-            <div className="text-3xl font-bold text-brand.blue">{energy.toLocaleString()} MWh</div>
+            <div className="text-3xl font-bold text-brand-blue">{energy.toLocaleString()} MWh</div>
             <div className="text-gray-400 mt-1">クリーンエネルギー供給量</div>
           </div>
         </div>

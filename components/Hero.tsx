@@ -48,7 +48,7 @@ const EnergyFlow = () => {
            radial-gradient(600px 200px at 80% 70%, rgba(0,113,197,0.35), transparent)'
       }} />
       <motion.div
-        className="absolute left-0 right-0 mx-auto top-1/3 h-0.5 bg-gradient-to-r from-brand.green via-white to-brand.blue"
+        className="absolute left-0 right-0 mx-auto top-1/3 h-0.5 bg-gradient-to-r from-brand-green via-white to-brand-blue"
         initial={{ width: 0 }}
         animate={{ width: '80%' }}
         transition={{ duration: 2 }}

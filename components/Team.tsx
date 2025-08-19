@@ -31,7 +31,7 @@ export const Team = () => {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4">
-                  <div className="text-sm uppercase tracking-wider text-brand.green">{m.role}</div>
+                  <div className="text-sm uppercase tracking-wider text-brand-green">{m.role}</div>
                   <div className="font-semibold text-lg">{m.name}</div>
                 </div>
               </div>
