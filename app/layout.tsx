@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const display = Space_Grotesk({ subsets: ['latin'], variable: '--font-display' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://example.com'),
+  metadataBase: new URL('https://machapillo.github.io/hello-world-careers'),
   title: 'Code the Future | Omron Social Solutions',
   description: 'エネルギー監視クラウドの採用特設サイト',
   openGraph: {

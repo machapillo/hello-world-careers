@@ -1,6 +1,30 @@
 "use client";
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') as string;
+
+function useSmartSrc(i: number, svgUrl: string) {
+  const candidates = useMemo(() => [
+    `${base}/images/values/value-${i + 1}.webp?v=1`,
+    `${base}/images/values/value-${i + 1}.jpg?v=1`,
+    svgUrl,
+  ], [i, svgUrl]);
+  const [src, setSrc] = useState<string>(svgUrl);
+  useEffect(() => {
+    let alive = true;
+    const tryNext = (index: number) => {
+      if (index >= candidates.length) return;
+      const url = candidates[index];
+      const img = new Image();
+      img.onload = () => { if (alive) setSrc(url); };
+      img.onerror = () => { if (alive) tryNext(index + 1); };
+      img.src = url;
+    };
+    tryNext(0);
+    return () => { alive = false; };
+  }, [candidates.join('|')]);
+  return src;
+}
 
 const values = [
   {
@@ -32,19 +56,20 @@ export const Values = () => {
           {values.map((v, i) => (
             <motion.div
               key={v.k}
-              className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.06 }}
             >
-              <div className="relative h-40 w-full">
-                <img src={v.img} alt={v.k} className="absolute inset-0 h-full w-full object-cover" />
+              <div className="relative h-40 w-full overflow-hidden">
+                {/* smart fallback: webp -> jpg -> svg */}
+                <SmartImage index={i} alt={v.k} svg={v.img} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 text-brand-green text-xs font-semibold">{v.k}</div>
               </div>
               <div className="p-5">
-                <div className="font-semibold text-lg mb-1">{v.title}</div>
+                <div className="font-semibold text-lg mb-1 group-hover:text-white transition-colors">{v.title}</div>
                 <p className="text-sm text-gray-300">{v.body}</p>
               </div>
             </motion.div>
@@ -54,3 +79,18 @@ export const Values = () => {
     </section>
   );
 };
+
+function SmartImage({ index, svg, alt }: { index: number; svg: string; alt: string }) {
+  const src = useSmartSrc(index, svg);
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={768}
+      height={160}
+      loading="lazy"
+      decoding="async"
+      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+    />
+  );
+}
