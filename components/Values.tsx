@@ -40,6 +40,7 @@ export const Values = () => {
               <div className="relative h-40 w-full">
                 <picture>
                   <source srcSet={`images/values/value-${i+1}.webp?v=1`} type="image/webp" />
+                  <source srcSet={`images/values/value-${i+1}.jpg?v=1`} type="image/jpeg" />
                   <img src={v.img} alt={v.k} className="absolute inset-0 h-full w-full object-cover" />
                 </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
