@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') as string;
 
 function useTyping(text: string, speed = 80) {
   const [out, setOut] = useState('');
@@ -30,7 +31,8 @@ export const Hero = () => {
           その一行が、地球のターニングポイントになる。
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
-          <a href="#mission" className="btn glass">私たちの挑戦を知る</a>
+          <a href={`${base}/#mission`} className="btn glass">私たちの挑戦を知る</a>
+          <a href={`${base}/energy-game`} className="btn-secondary">Energy Game を試す</a>
         </div>
         {/* credibility strip */}
         <div className="mt-10 opacity-80">
@@ -72,7 +74,7 @@ const VideoBackground = () => {
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden">
       <motion.img
-        src="images/hero.svg?v=2"
+        src={`${base}/images/hero.svg?v=2`}
         alt="Futuristic clean energy city"
         className="h-full w-full object-cover"
         initial={{ scale: 1.15 }}

@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') as string;
 
  type Job = {
   id: string;
@@ -96,6 +97,9 @@ import { motion } from 'framer-motion';
                     </button>
                   ))}
                 </div>
+              </div>
+              <div className="mt-4">
+                <a href={`${base}/energy-game`} className="btn-secondary">Energy Game を試す</a>
               </div>
             </div>
 
