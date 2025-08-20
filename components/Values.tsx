@@ -1,25 +1,24 @@
 "use client";
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const values = [
   {
     k: 'Customer Impact',
     title: 'インパクトから考える',
     body: '意思決定の最初に「ユーザーと社会への価値」を置きます。',
-    img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
+    img: 'images/values/value-1.svg?v=2',
   },
   {
     k: 'Transparency',
     title: 'オープンであること',
     body: '前提・数字・失敗も共有。事実で議論し、学習速度を上げます。',
-    img: 'https://images.unsplash.com/photo-1531539134687-27f323cb4705?q=80&w=1200&auto=format&fit=crop',
+    img: 'images/values/value-2.svg?v=2',
   },
   {
     k: 'Craft',
     title: 'ものづくりへの敬意',
     body: '確かな設計と運用の美しさ。リリース後も磨き続けます。',
-    img: 'https://images.unsplash.com/photo-1506818144585-74b29c980d4b?q=80&w=1200&auto=format&fit=crop',
+    img: 'images/values/value-3.svg?v=2',
   },
 ];
 
@@ -39,7 +38,7 @@ export const Values = () => {
               transition={{ delay: i * 0.06 }}
             >
               <div className="relative h-40 w-full">
-                <Image src={v.img} alt={v.k} fill className="object-cover" />
+                <img src={v.img} alt={v.k} className="absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 text-brand-green text-xs font-semibold">{v.k}</div>
               </div>
