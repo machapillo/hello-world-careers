@@ -68,21 +68,17 @@ const EnergyFlow = () => {
 };
 
 const VideoBackground = () => {
+  // replaced by a premium futuristic energy-themed photo with subtle motion
   return (
-    <div className="absolute inset-0 -z-20">
-      <video
+    <div className="absolute inset-0 -z-20 overflow-hidden">
+      <motion.img
+        src="https://images.unsplash.com/photo-1551281044-8f3b9c7e8a06?q=80&w=1920&auto=format&fit=crop"
+        alt="Futuristic clean energy city"
         className="h-full w-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600&auto=format&fit=crop"
-      >
-        <source
-          src="https://assets.coverr.co/videos/coverr-earth-in-space-3432/1080p.mp4"
-          type="video/mp4"
-        />
-      </video>
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2.4, ease: 'easeOut' }}
+      />
     </div>
   );
 };

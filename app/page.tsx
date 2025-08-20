@@ -10,6 +10,7 @@ import { Values } from '@/components/Values';
 import { Jobs } from '@/components/Jobs';
 import { Navbar } from '@/components/Navbar';
 import { CaseStudies } from '@/components/CaseStudies';
+import { Testimonials } from '@/components/Testimonials';
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
       <Mission />
       <Challenge />
       <CaseStudies />
+      <Testimonials />
       <Gallery />
       <Team />
       <Values />
