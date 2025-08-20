@@ -11,6 +11,7 @@ import { Jobs } from '@/components/Jobs';
 import { Navbar } from '@/components/Navbar';
 import { CaseStudies } from '@/components/CaseStudies';
 import { Testimonials } from '@/components/Testimonials';
+import { Benefits } from '@/components/Benefits';
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
       <Challenge />
       <CaseStudies />
       <Testimonials />
+      <Benefits />
       <Gallery />
       <Team />
       <Values />
