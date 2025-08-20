@@ -72,7 +72,7 @@ const VideoBackground = () => {
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden">
       <motion.img
-        src="/images/hero.svg"
+        src="images/hero.svg"
         alt="Futuristic clean energy city"
         className="h-full w-full object-cover"
         initial={{ scale: 1.15 }}
