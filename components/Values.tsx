@@ -38,7 +38,10 @@ export const Values = () => {
               transition={{ delay: i * 0.06 }}
             >
               <div className="relative h-40 w-full">
-                <img src={v.img} alt={v.k} className="absolute inset-0 h-full w-full object-cover" />
+                <picture>
+                  <source srcSet={`images/values/value-${i+1}.webp?v=1`} type="image/webp" />
+                  <img src={v.img} alt={v.k} className="absolute inset-0 h-full w-full object-cover" />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 text-brand-green text-xs font-semibold">{v.k}</div>
               </div>
