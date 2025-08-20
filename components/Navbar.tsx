@@ -21,18 +21,18 @@ export const Navbar = () => {
         scrolled ? 'bg-black/60 border-white/15 backdrop-blur-md' : 'bg-black/30 border-white/10 backdrop-blur'
       }`}
     >
-      <a href="#hero" className="font-display text-lg md:text-xl text-white">
+      <a href={`${base}/#hero`} className="font-display text-lg md:text-xl text-white">
         OSS Energy
       </a>
       <div className="hidden md:flex items-center gap-6 text-sm text-gray-300">
-        <a href="#mission" className="hover:text-white">Mission</a>
-        <a href="#story" className="hover:text-white">Story</a>
-        <a href="#cases" className="hover:text-white">Case Studies</a>
-        <a href="#values" className="hover:text-white">Culture</a>
-        <a href="#jobs" className="hover:text-white">Jobs</a>
+        <a href={`${base}/#mission`} className="hover:text-white">Mission</a>
+        <a href={`${base}/#story`} className="hover:text-white">Story</a>
+        <a href={`${base}/#cases`} className="hover:text-white">Case Studies</a>
+        <a href={`${base}/#values`} className="hover:text-white">Culture</a>
+        <a href={`${base}/#jobs`} className="hover:text-white">Jobs</a>
         <a href={`${base}/energy-game`} className="hover:text-white">Energy Game</a>
       </div>
-      <a href="#jobs" className="btn glass text-xs md:text-sm">今すぐ応募</a>
+      <a href={`${base}/#jobs`} className="btn glass text-xs md:text-sm">今すぐ応募</a>
     </motion.nav>
   );
 };
