@@ -18,7 +18,7 @@ const cases: Case[] = [
     customer: '電力小売 A 社',
     summary: '需要予測×蓄電池制御でインバランスを30%削減',
     impact: 'CO2 年間 12,300t 削減、供給安定性を向上',
-    cover: 'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1200'
+    cover: '/images/cases/case-1.svg'
   },
   {
     id: 'realtime-monitoring',
@@ -26,7 +26,7 @@ const cases: Case[] = [
     customer: 'スマートビル運営 B 社',
     summary: 'MQ/ストリーミング基盤で秒単位の監視を実現',
     impact: '異常検知の平均検知時間を87%短縮',
-    cover: 'https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1200&auto=format&fit=crop'
+    cover: '/images/cases/case-2.svg'
   },
   {
     id: 'ops-slo',
@@ -34,7 +34,7 @@ const cases: Case[] = [
     customer: 'SaaS プロバイダ C 社',
     summary: '自動回復/セルフヒーリングで MTTR を削減',
     impact: '障害対応コストを40%圧縮、SLO 達成率+12pt',
-    cover: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop'
+    cover: '/images/cases/case-3.svg'
   }
 ];
 

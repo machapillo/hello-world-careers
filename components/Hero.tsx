@@ -72,13 +72,12 @@ const VideoBackground = () => {
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden">
       <motion.img
-        src="https://images.pexels.com/photos/238118/pexels-photo-238118.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        src="/images/hero.svg"
         alt="Futuristic clean energy city"
         className="h-full w-full object-cover"
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
         transition={{ duration: 3, ease: 'easeOut' }}
-        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920&auto=format&fit=crop'; }}
       />
     </div>
   );
