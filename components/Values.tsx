@@ -1,24 +1,25 @@
 "use client";
 import { motion } from 'framer-motion';
+const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') as string;
 
 const values = [
   {
     k: 'Customer Impact',
     title: 'インパクトから考える',
     body: '意思決定の最初に「ユーザーと社会への価値」を置きます。',
-    img: '/hello-world-careers/images/values/value-1.svg?v=2',
+    img: `${base}/images/values/value-1.svg?v=2`,
   },
   {
     k: 'Transparency',
     title: 'オープンであること',
     body: '前提・数字・失敗も共有。事実で議論し、学習速度を上げます。',
-    img: '/hello-world-careers/images/values/value-2.svg?v=2',
+    img: `${base}/images/values/value-2.svg?v=2`,
   },
   {
     k: 'Craft',
     title: 'ものづくりへの敬意',
     body: '確かな設計と運用の美しさ。リリース後も磨き続けます。',
-    img: '/hello-world-careers/images/values/value-3.svg?v=2',
+    img: `${base}/images/values/value-3.svg?v=2`,
   },
 ];
 
@@ -39,8 +40,8 @@ export const Values = () => {
             >
               <div className="relative h-40 w-full">
                 <picture>
-                  <source srcSet={`/hello-world-careers/images/values/value-${i+1}.webp?v=1`} type="image/webp" />
-                  <source srcSet={`/hello-world-careers/images/values/value-${i+1}.jpg?v=1`} type="image/jpeg" />
+                  <source srcSet={`${base}/images/values/value-${i+1}.webp?v=1`} type="image/webp" />
+                  <source srcSet={`${base}/images/values/value-${i+1}.jpg?v=1`} type="image/jpeg" />
                   <img src={v.img} alt={v.k} className="absolute inset-0 h-full w-full object-cover" />
                 </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />

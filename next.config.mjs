@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isDev = process.env.NODE_ENV !== 'production';
+const BASE = '/hello-world-careers';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/hello-world-careers',
-  assetPrefix: '/hello-world-careers/',
+  basePath: BASE,
+  assetPrefix: `${BASE}/`,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -18,6 +21,9 @@ const nextConfig = {
   },
   experimental: {
     typedRoutes: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isDev ? '' : BASE,
   },
 };
 

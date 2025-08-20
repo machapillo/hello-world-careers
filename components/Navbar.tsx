@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') as string;
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,6 +30,7 @@ export const Navbar = () => {
         <a href="#cases" className="hover:text-white">Case Studies</a>
         <a href="#values" className="hover:text-white">Culture</a>
         <a href="#jobs" className="hover:text-white">Jobs</a>
+        <a href={`${base}/energy-game`} className="hover:text-white">Energy Game</a>
       </div>
       <a href="#jobs" className="btn glass text-xs md:text-sm">今すぐ応募</a>
     </motion.nav>

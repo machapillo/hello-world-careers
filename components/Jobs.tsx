@@ -1,7 +1,6 @@
 "use client";
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import EnergyMiniGame from './EnergyMiniGame';
 
  type Job = {
   id: string;
@@ -129,12 +128,10 @@ import EnergyMiniGame from './EnergyMiniGame';
                 </motion.button>
               ))}
             </div>
+
           </div>
 
-          {/* sidebar mini-game */}
-          <div className="hidden md:block">
-            <EnergyMiniGame />
-          </div>
+          {/* mini-game was moved to /energy-game page */}
         </div>
 
         {/* Detail Modal */}
