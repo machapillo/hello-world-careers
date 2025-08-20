@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const display = Space_Grotesk({ subsets: ['latin'], variable: '--font-display' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://example.com'),
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" className="dark">
-      <body className={inter.variable + ' font-sans'}>
+      <body className={`${inter.variable} ${display.variable} font-sans`}>
         {children}
       </body>
     </html>

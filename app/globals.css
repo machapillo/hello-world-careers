@@ -23,10 +23,10 @@ body {
 }
 
 .h1 {
-  @apply text-4xl md:text-6xl font-bold tracking-tight;
+  @apply text-5xl md:text-7xl font-bold tracking-tight leading-tight font-display;
 }
 .h2 {
-  @apply text-3xl md:text-5xl font-semibold;
+  @apply text-3xl md:text-5xl font-semibold leading-snug font-display;
 }
 .p {
   @apply text-base md:text-lg text-gray-300 leading-relaxed;
@@ -47,4 +47,9 @@ body {
 }
 .shadow-hover {
   @apply hover:shadow-2xl transition;
+}
+
+/* gradient text utility */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-green via-white to-brand-blue;
 }

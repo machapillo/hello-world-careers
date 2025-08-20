@@ -8,14 +8,18 @@ import { Gallery } from '@/components/Gallery';
 import { Story } from '@/components/Story';
 import { Values } from '@/components/Values';
 import { Jobs } from '@/components/Jobs';
+import { Navbar } from '@/components/Navbar';
+import { CaseStudies } from '@/components/CaseStudies';
 
 export default function Page() {
   return (
     <main>
+      <Navbar />
       <Hero />
       <Story />
       <Mission />
       <Challenge />
+      <CaseStudies />
       <Gallery />
       <Team />
       <Values />

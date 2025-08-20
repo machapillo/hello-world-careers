@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
+        display: ['var(--font-display)', 'ui-sans-serif', 'system-ui']
       },
       colors: {
         brand: {

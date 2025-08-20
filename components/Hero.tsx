@@ -23,7 +23,7 @@ export const Hero = () => {
       <VideoBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80" />
       <div className="container relative z-10 text-center">
-        <motion.h1 className="h1 mb-6 drop-shadow" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+        <motion.h1 className="h1 mb-6 drop-shadow text-gradient" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           {typed}
         </motion.h1>
         <p className="p max-w-2xl mx-auto text-gray-200">
@@ -31,6 +31,16 @@ export const Hero = () => {
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
           <a href="#mission" className="btn glass">私たちの挑戦を知る</a>
+        </div>
+        {/* credibility strip */}
+        <div className="mt-10 opacity-80">
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">Trusted by innovators</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-gray-400">
+            <span className="text-sm md:text-base">AWS Partner</span>
+            <span className="text-sm md:text-base">CNCF Member</span>
+            <span className="text-sm md:text-base">ISO/IEC 27001</span>
+            <span className="text-sm md:text-base">Open Data Challenge Award</span>
+          </div>
         </div>
       </div>
       <EnergyFlow />
