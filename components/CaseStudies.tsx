@@ -18,7 +18,7 @@ const cases: Case[] = [
     customer: '電力小売 A 社',
     summary: '需要予測×蓄電池制御でインバランスを30%削減',
     impact: 'CO2 年間 12,300t 削減、供給安定性を向上',
-    cover: 'https://images.unsplash.com/photo-1584270354949-c26b0e5c2be5?q=80&w=1200&auto=format&fit=crop'
+    cover: 'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1200'
   },
   {
     id: 'realtime-monitoring',
@@ -49,7 +49,13 @@ export const CaseStudies = () => {
           {cases.map((c) => (
             <button key={c.id} onClick={() => setActive(c)} className="card text-left overflow-hidden group">
               <div className="aspect-video w-full overflow-hidden">
-                <img src={c.cover} alt="" className="h-full w-full object-cover group-hover:scale-105 transition" />
+                <img
+                  src={c.cover}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover group-hover:scale-105 transition"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.pexels.com/photos/425455/pexels-photo-425455.jpeg?auto=compress&cs=tinysrgb&w=1200'; }}
+                />
               </div>
               <div className="p-4">
                 <p className="text-xs text-gray-400">{c.customer}</p>
@@ -67,7 +73,12 @@ export const CaseStudies = () => {
             <div className="absolute inset-0 grid place-items-center p-6">
               <motion.div className="max-w-2xl w-full card bg-black/60" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 20, opacity: 0 }}>
                 <div className="aspect-video w-full overflow-hidden">
-                  <img src={active.cover} alt="" className="h-full w-full object-cover" />
+                  <img
+                    src={active.cover}
+                    alt=""
+                    className="h-full w-full object-cover"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.pexels.com/photos/425455/pexels-photo-425455.jpeg?auto=compress&cs=tinysrgb&w=1200'; }}
+                  />
                 </div>
                 <div className="p-5">
                   <p className="text-xs text-gray-400">{active.customer}</p>

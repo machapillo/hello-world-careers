@@ -21,7 +21,7 @@ export const Hero = () => {
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden">
       <VideoBackground />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/80" />
       <div className="container relative z-10 text-center">
         <motion.h1 className="h1 mb-6 drop-shadow text-gradient" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           {typed}
@@ -72,12 +72,13 @@ const VideoBackground = () => {
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden">
       <motion.img
-        src="https://images.unsplash.com/photo-1551281044-8f3b9c7e8a06?q=80&w=1920&auto=format&fit=crop"
+        src="https://images.pexels.com/photos/238118/pexels-photo-238118.jpeg?auto=compress&cs=tinysrgb&w=1920"
         alt="Futuristic clean energy city"
         className="h-full w-full object-cover"
-        initial={{ scale: 1.08 }}
+        initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 2.4, ease: 'easeOut' }}
+        transition={{ duration: 3, ease: 'easeOut' }}
+        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920&auto=format&fit=crop'; }}
       />
     </div>
   );
